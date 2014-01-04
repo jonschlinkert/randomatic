@@ -16,7 +16,7 @@ npm i randomatic --save
 bower install randomatic --save
 ```
 
-## Usage
+## Documentation
 
 ```js
 var randomatic = require('randomatic');
@@ -75,7 +75,7 @@ Currently the only option is `chars`, which allows you to define a custom string
 * `randomize('?', {chars: 'jonschlinkert'})` will generate a 13-character randomized string from the letters contained in `jonschlinkert`.
 
 
-### Usage Examples
+## Usage Examples
 
 * `randomize('A', 4)` (_whitespace insenstive_) would result in randomized 4-digit uppercase letters, like, `ZAKH`, `UJSL`... and so on.
 * `randomize('AAAA')` is equivelant to `randomize('A', 4)`
