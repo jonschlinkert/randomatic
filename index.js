@@ -1,5 +1,5 @@
 /**
- * randomize-chars
+ * randomatic
  * Inspired by http://stackoverflow.com/a/10727155/1267639
  * Copyright (c) 2014 Jon Schlinkert
  * Licensed under the MIT License (MIT).
