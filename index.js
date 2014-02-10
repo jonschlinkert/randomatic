@@ -70,7 +70,7 @@
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = randomatic;
-  } else if (typeof angular !== 'undefined' && angular.factory) {
+  } else if (typeof angular !== 'undefined' && angular.module) {
     angular.module('randomatic', []).value('randomatic', randomatic);
   } else {
     window.randomatic = randomatic;
