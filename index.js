@@ -1,7 +1,7 @@
 /**
  * randomatic
  * Inspired by http://stackoverflow.com/a/10727155/1267639
- * Copyright (c) 2014 Jon Schlinkert and Omar Al-Ithawi
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT License (MIT).
  */
  
