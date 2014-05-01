@@ -1,7 +1,7 @@
 {
   "name": "randomatic",
   "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/randomatic",
   "author": {
     "name": "Jon Schlinkert",
@@ -25,24 +25,17 @@
     "alpha",
     "alpha-numeric",
     "alphanumeric",
-    "chars",
     "characters",
+    "chars",
     "numeric",
-    "random",
     "rand",
+    "random",
     "randomize",
     "randomized"
   ],
   "devDependencies": {
-    "frep": "~0.1.2",
-    "lodash": "~2.4.1",
-    "chalk": "~0.4.0",
-    "grunt-sync-pkg": "~0.1.2",
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-readme": "~0.4.5"
-  },
-  "dependencies": {
-    "lodash": "~2.4.1"
+    "chai": "~1.9.1",
+    "mocha": "~1.18.2",
+    "verb": "~0.2.5"
   }
 }

@@ -2,27 +2,11 @@
  * TODO: add mocha tests
  */
 
-
-// node_modules
 var frep = require('frep');
 var _ = require('lodash');
-var chalk = require('chalk');
-var info = chalk.cyan;
 
 // Local lib
 var randomize = require('../');
-
-console.log(randomize('A', 12));
-console.log(randomize('a', 12));
-console.log(randomize('0', 12));
-console.log(randomize('A0', 12));
-console.log(randomize('Aa0', 12));
-console.log(randomize('AAA'));
-console.log(randomize('Aa0'));
-console.log(randomize('000'));
-console.log(randomize('?', {chars: 'jonschlinkert'}));
-console.log(randomize('AAAAA', 3));
-console.log(randomize('*', 16));
 
 
 // Example replacement patterns. These replacement
@@ -41,7 +25,7 @@ var replacements = [
         opts.chars = (arr[2] || '').replace(/(^\s+|\s+$)/, '');
         return randomize(id, len, opts);
       } else {
-        var len = b.length;
+        len = b.length;
         return randomize(b, len);
       }
     }
@@ -72,5 +56,5 @@ var patterns = {
 };
 
 _.forIn(patterns, function(value, key) {
-  console.log('>> ' + info('Should be ' + value + '\t'), frep.strWithArr(key, replacements));
+  console.log('>> ' + ('Should be ' + value + '\t'), frep.strWithArr(key, replacements));
 });
