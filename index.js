@@ -15,7 +15,6 @@ var type = {
 module.exports = function (chars, length, opts) {
   opts = opts || {};
   opts.chars = opts.chars || '';
-  opts.id = opts.id || '';
 
   if(typeof length === 'object') {
     opts = length;
