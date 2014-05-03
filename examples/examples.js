@@ -9,9 +9,7 @@ var _ = require('lodash');
 var randomize = require('../');
 
 
-// Example replacement patterns. These replacement
-// patterns are used in assemble-contrib-permalinks:
-// https://github.com/assemble/assemble-contrib-permalinks
+// Example replacement patterns.
 var replacements = [
   {
     pattern: /:random\(([^)]+)\)/,
