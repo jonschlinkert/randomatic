@@ -1,43 +1,53 @@
-# randomatic [![NPM version](https://badge.fury.io/js/randomatic.png)](http://badge.fury.io/js/randomatic)
+# randomatic [![NPM version](https://badge.fury.io/js/randomatic.svg)](http://badge.fury.io/js/randomatic)
 
-> Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.
+> Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.
 
-## Quickstart
-
-### [npm](https://npmjs.org/)
+## Install with [npm](npmjs.org)
 
 ```bash
 npm i randomatic --save
 ```
-
-### [bower](https://github.com/bower/bower)
+### Install with [bower](https://github.com/bower/bower)
 
 ```bash
 bower install randomatic --save
 ```
 
-## Tests
 
-Run the tests
-
-```bash
-mocha
-```
-
-## Documentation
+## Usage
 
 ```js
 var randomize = require('randomatic');
 ```
 
-### Params
 
-The following parameters can be passed (`randomize(Pattern, Length, Options)`)
+## API
 
-#### pattern
-Type: `String` (required)
+```
+randomize(pattern, length, options);
+```
 
-Default: `undefined`
+- `pattern` **{String}**: The pattern to use for randomizing
+- `length` **{Object}**: The length of the string to generate
+
+
+### pattern
+
+> The pattern to use for randomizing
+
+Patterns can contain any combination of the below characters, specified in any order.
+
+**Example:**
+
+To generate a 10-character randomized string using all available characters:
+
+```js
+randomize('*', 10);
+//=>
+
+randomize('Aa0!', 10);
+//=>
+```
 
 * `a`: Lowercase alpha characters (`abcdefghijklmnopqrstuvwxyz'`)
 * `A`: Uppercase alpha characters (`ABCDEFGHIJKLMNOPQRSTUVWXYZ'`)
@@ -46,16 +56,12 @@ Default: `undefined`
 * `*`: All characters (all of the above combined)
 * `?`: Custom characters (pass a string of custom characters to the options)
 
-Patterns can contain any combination of the above characters, in any order. For example, `randomize('Aa0!', 10)` will generate a 10-character randomized string with all of the specified patterns.
 
-#### length
-Type: `Number` (optional)
+### length
 
-Default: `undefined`
+> the length of the string to generate
 
-Specify the number of characters/digits to generate in the output.
-
-Examples:
+**Examples:**
 
 * `randomize('A', 5)` will generate a 5-character, uppercase, alphabetical, randomized string, e.g. `KDJWJ`.
 * `randomize('0', 2)` will generate a 2-digit random number
@@ -70,22 +76,29 @@ If `length` is left undefined, the length of the pattern in the first parameter 
 * `randomize('0000')` will generate a 4-digit random number...
 * `randomize('AAAAA')` will generate a 5-character, uppercase alphabetical random string...
 
-...and so on.
+These are just examples, [see the tests](./test.js) for more use cases and examples.
 
-#### options
-Type: `Object` (optional)
+
+
+## options
+
+#### chars
+Type: `String`
 
 Default: `undefined`
 
-Currently the only option is `chars`, which allows you to define a custom string to be randomized. For example:
+Define a custom string to be randomized.
+
+**Example:**
 
 * `randomize('?', 20, {chars: 'jonschlinkert'})` will generate a 20-character randomized string from the letters contained in `jonschlinkert`.
 * `randomize('?', {chars: 'jonschlinkert'})` will generate a 13-character randomized string from the letters contained in `jonschlinkert`.
 
 
+
 ## Usage Examples
 
-* `randomize('A', 4)` (_whitespace insenstive_) would result in randomized 4-digit uppercase letters, like, `ZAKH`, `UJSL`... and so on.
+* `randomize('A', 4)` (_whitespace insenstive_) would result in randomized 4-digit uppercase letters, like, `ZAKH`, `UJSL`... etc.
 * `randomize('AAAA')` is equivelant to `randomize('A', 4)`
 * `randomize('AAA0')` and `randomize('AA00')` and `randomize('A0A0')` are equivelant to `randomize('A0', 4)`
 * `randomize('aa')`: results in double-digit, randomized, lower-case letters (`abcdefghijklmnopqrstuvwxyz`)
@@ -94,27 +107,32 @@ Currently the only option is `chars`, which allows you to define a custom string
 * `randomize('!', 5)`: results in single-digit randomized, _valid_ non-letter characters (`~!@#$%^&()_+-={}[];\',.`)
 * `randomize('A!a0', 9)`: results in nine-digit, randomized characters (any of the above)
 
-_The order in which the characters are provided has no impact on the outcome._
+_The order in which the characters are defined is insignificant._
+
+
+
+## Running tests
+
+Install dev dependencies:
+
+```bash
+npm install -d && mocha
+```
 
 ## Contributing
-Find a bug? Have a feature request? Please [create an Issue](https://github.com/jonschlinkert/randomatic/issues).
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/randomatic/issues)
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality,
-and run `docs` in the command line to build the docs with [Verb](https://github.com/assemble/verb).
-
-Pull requests are also encouraged, and if you find this project useful please consider "starring" it to show your support! Thanks!
-
-## Authors
+## Author
 
 **Jon Schlinkert**
-
+ 
 + [github/jonschlinkert](https://github.com/jonschlinkert)
-+ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
++ [twitter/jonschlinkert](http://twitter.com/jonschlinkert) 
 
 ## License
-Copyright (c) 2014 Jon Schlinkert, contributors.  
+Copyright (c) 2015 Jon Schlinkert  
 Released under the MIT license
 
 ***
 
-_This file was generated by [verb-cli](https://github.com/assemble/verb-cli) on May 19, 2014._
+_This file was generated by [verb](https://github.com/assemble/verb) on January 02, 2015._
