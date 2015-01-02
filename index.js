@@ -1,8 +1,16 @@
+/*!
+ * randomatic <https://github.com/jonschlinkert/randomatic>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License (MIT)
+ *
+ * Originally inspired by <http://stackoverflow.com/a/10727155/1267639>
+ */
+
+var isNumber = require('is-number');
+
 /**
- * randomatic
- * Inspired by http://stackoverflow.com/a/10727155/1267639
- * Copyright (c) 2014 Jon Schlinkert
- * Licensed under the MIT License (MIT).
+ * Available mask characters
  */
 
 var type = {
@@ -12,36 +20,62 @@ var type = {
   special: '~!@#$%^&()_+-={}[];\',.'
 };
 
-module.exports = function (chars, length, opts) {
-  opts = opts || {};
+/**
+ * Generate random character sequences of a specified `length`,
+ * based on the given `pattern`.
+ *
+ * @param {String} `pattern` The pattern to use for generating the random string.
+ * @param {String} `length` The length of the string to generate.
+ * @param {String} `options`
+ * @return {String}
+ * @api public
+ */
+
+module.exports = function randomatic(pattern, length, options) {
+  if (arguments.length === 1 && typeof pattern === 'number') {
+    options = length;
+    length = pattern;
+    pattern = '*';
+  }
+
+  var opts = options || {};
+  var mask = '';
+  var res = '';
+
   opts.chars = opts.chars || '';
 
+  // if `length` is an object, since `chars` is currently the only
+  // option, use the length of the special chars as `length`
   if(typeof length === 'object') {
     opts = length;
-    length = opts.chars.length;
+    if (isNumber(pattern)) {
+      length = pattern;
+    } else {
+      length = opts.chars.length;
+    }
+    pattern = opts.chars;
   }
+
+  // if no `length` is defined, use the length of the pattern
   if(typeof length === 'undefined') {
-    length = chars.length;
+    length = pattern.length;
   }
 
-  type.custom = opts.chars;
-  type.all = Object.keys(type).map(function (key) {
-    return type[key];
-  }).join('');
+  // Characters to be used
+  if (pattern.indexOf('?') > -1) mask += opts.chars;
+  if (pattern.indexOf('a') > -1) mask += type.lower;
+  if (pattern.indexOf('A') > -1) mask += type.upper;
+  if (pattern.indexOf('0') > -1) mask += type.numeric;
+  if (pattern.indexOf('!') > -1) mask += type.special;
+  if (pattern.indexOf('*') > -1) mask += type.all;
 
-  var mask = '';
-  var result = [];
-
-  // Allow a custom string to be randomized (opts.chars)
-  if (chars.indexOf('?') > -1) {mask += type.custom;}
-  if (chars.indexOf('a') > -1) {mask += type.lower; }
-  if (chars.indexOf('A') > -1) {mask += type.upper; }
-  if (chars.indexOf('0') > -1) {mask += type.numeric; }
-  if (chars.indexOf('!') > -1) {mask += type.special; }
-  if (chars.indexOf('*') > -1) {mask += type.all; }
-
-  for (var i = length; i > 0; --i) {
-    result.push(mask[Math.round(Math.random() * (mask.length - 1))]);
+  if (mask.length === 0 || mask == null) {
+    mask += pattern;
   }
-  return result.join('');
+
+  var len = mask.length - 1;
+  while (length--) {
+    res += mask[parseInt(Math.random() * len)];
+  }
+  return res;
 };
