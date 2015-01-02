@@ -1,7 +1,7 @@
 {
   "name": "randomatic",
-  "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
-  "version": "0.1.4",
+  "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/randomatic",
   "author": {
     "name": "Jon Schlinkert",
@@ -14,13 +14,20 @@
   "bugs": {
     "url": "https://github.com/jonschlinkert/randomatic/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+  },
+  "scripts": {
+    "test": "mocha -R spec",
+    "docs": "update && license && npmignore && deps && verb",
+    "all": "npm run test && npm run docs"
+  },
   "main": "index.js",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "should": "^4.4.1"
+  },
   "keywords": [
     "alpha",
     "alpha-numeric",
@@ -33,9 +40,7 @@
     "randomize",
     "randomized"
   ],
-  "devDependencies": {
-    "chai": "~1.9.1",
-    "mocha": "~1.18.2",
-    "verb": "~0.2.5"
+  "dependencies": {
+    "is-number": "^0.1.1"
   }
 }
