@@ -1,7 +1,7 @@
 {
   "name": "randomatic",
   "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/jonschlinkert/randomatic",
   "author": {
     "name": "Jon Schlinkert",
