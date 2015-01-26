@@ -48,14 +48,13 @@ function randomatic(pattern, length, options) {
     throw new Error('randomatic expects a string or number.');
   }
 
+  var custom = false;
   if (arguments.length === 1) {
     if (typeof pattern === 'string') {
       length = pattern.length;
 
     } else if (isNumber(pattern)) {
-      options = {};
-      length = pattern;
-      pattern = '*';
+      options = {}; length = pattern; pattern = '*';
     }
   }
 
@@ -63,6 +62,7 @@ function randomatic(pattern, length, options) {
     options = length;
     pattern = options.chars;
     length = pattern.length;
+    custom = true;
   }
 
   var opts = options || {};
@@ -76,16 +76,11 @@ function randomatic(pattern, length, options) {
   if (pattern.indexOf('0') !== -1) mask += type.number;
   if (pattern.indexOf('!') !== -1) mask += type.special;
   if (pattern.indexOf('*') !== -1) mask += type.all;
-
-  var len = mask.length;
-  var num = len - 1;
-
-  if (!len || mask == null) {
-    mask += pattern;
-  }
+  if (custom) mask += pattern;
 
   while (length--) {
-    res += mask[parseInt(Math.random() * num)];
+    res += mask.charAt(parseInt(Math.random() * mask.length));
   }
+
   return res;
 };
