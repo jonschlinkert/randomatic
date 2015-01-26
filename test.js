@@ -15,8 +15,15 @@ function test(re, str) {
 }
 
 describe('randomatic', function () {
+  it('should throw an error when no arguments are passed:', function () {
+    (function() {
+      randomize()
+    }).should.throw('randomatic expects a string or number.');
+  });
+
   it('should generate a randomized string of the given length:', function () {
     randomize(12).length.should.equal(12);
+    randomize(5).should.be.a.string;
   });
 
   it('should generate a string with a length equal to the number passed as a second parameter', function () {
@@ -76,7 +83,7 @@ describe('randomatic', function () {
     actual.length.should.equal(3);
   });
 
-  it('should generate a radomized 12-character string using the characters on the `chars` option', function () {
+  it('should randomize a string from the characters on the `chars` option', function () {
     var actual = randomize('?', {chars: 'jonschlinkert'});
     test(/[jonschlinkert]{13}/, actual).should.be.true;
     actual.length.should.equal(13);
