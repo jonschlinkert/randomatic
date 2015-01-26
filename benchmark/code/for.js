@@ -54,7 +54,9 @@ function randomatic(pattern, length, options) {
       length = pattern.length;
 
     } else if (isNumber(pattern)) {
-      options = {}; length = pattern; pattern = '*';
+      options = {};
+      length = pattern;
+      pattern = '*';
     }
   }
 
@@ -78,7 +80,7 @@ function randomatic(pattern, length, options) {
   if (pattern.indexOf('*') !== -1) mask += type.all;
   if (custom) mask += pattern;
 
-  while (length--) {
+  for (var i = 0; i < length; i++) {
     res += mask.charAt(parseInt(Math.random() * mask.length));
   }
 
