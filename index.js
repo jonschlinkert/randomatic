@@ -4,10 +4,20 @@
  * Copyright (c) 2014-2015, Jon Schlinkert.
  * Licensed under the MIT License (MIT)
  *
- * Originally inspired by <http://stackoverflow.com/a/10727155/1267639>
+ * Many changes have been made, but this was originally
+ * inspired by <http://stackoverflow.com/a/10727155/1267639>
  */
 
+'use strict';
+
 var isNumber = require('is-number');
+var typeOf = require('kind-of');
+
+/**
+ * Expose `randomatic`
+ */
+
+module.exports = randomatic;
 
 /**
  * Available mask characters
@@ -16,9 +26,11 @@ var isNumber = require('is-number');
 var type = {
   lower: 'abcdefghijklmnopqrstuvwxyz',
   upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  numeric: '0123456789',
+  number: '0123456789',
   special: '~!@#$%^&()_+-={}[];\',.'
 };
+
+type.all = type.lower + type.upper + type.number;
 
 /**
  * Generate random character sequences of a specified `length`,
@@ -31,51 +43,49 @@ var type = {
  * @api public
  */
 
-module.exports = function randomatic(pattern, length, options) {
-  if (arguments.length === 1 && typeof pattern === 'number') {
+function randomatic(pattern, length, options) {
+  if (typeof pattern === 'undefined') {
+    throw new Error('randomatic expects a string or number.');
+  }
+
+  if (arguments.length === 1) {
+    if (typeof pattern === 'string') {
+      length = pattern.length;
+
+    } else if (isNumber(pattern)) {
+      options = {};
+      length = pattern;
+      pattern = '*';
+    }
+  }
+
+  if(typeOf(length) === 'object' && length.hasOwnProperty('chars')) {
     options = length;
-    length = pattern;
-    pattern = '*';
+    pattern = options.chars;
+    length = pattern.length;
   }
 
   var opts = options || {};
   var mask = '';
   var res = '';
 
-  opts.chars = opts.chars || '';
-
-  // if `length` is an object, since `chars` is currently the only
-  // option, use the length of the special chars as `length`
-  if(typeof length === 'object') {
-    opts = length;
-    if (isNumber(pattern)) {
-      length = pattern;
-    } else {
-      length = opts.chars.length;
-    }
-    pattern = opts.chars;
-  }
-
-  // if no `length` is defined, use the length of the pattern
-  if(typeof length === 'undefined') {
-    length = pattern.length;
-  }
-
   // Characters to be used
-  if (pattern.indexOf('?') > -1) mask += opts.chars;
-  if (pattern.indexOf('a') > -1) mask += type.lower;
-  if (pattern.indexOf('A') > -1) mask += type.upper;
-  if (pattern.indexOf('0') > -1) mask += type.numeric;
-  if (pattern.indexOf('!') > -1) mask += type.special;
-  if (pattern.indexOf('*') > -1) mask += type.all;
+  if (pattern.indexOf('?') !== -1) mask += opts.chars;
+  if (pattern.indexOf('a') !== -1) mask += type.lower;
+  if (pattern.indexOf('A') !== -1) mask += type.upper;
+  if (pattern.indexOf('0') !== -1) mask += type.number;
+  if (pattern.indexOf('!') !== -1) mask += type.special;
+  if (pattern.indexOf('*') !== -1) mask += type.all;
 
-  if (mask.length === 0 || mask == null) {
+  var len = mask.length;
+  var num = len - 1;
+
+  if (!len || mask == null) {
     mask += pattern;
   }
 
-  var len = mask.length - 1;
   while (length--) {
-    res += mask[parseInt(Math.random() * len)];
+    res += mask[parseInt(Math.random() * num)];
   }
   return res;
 };
