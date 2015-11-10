@@ -3,23 +3,14 @@
   "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
   "version": "1.1.0",
   "homepage": "https://github.com/jonschlinkert/randomatic",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jonschlinkert/randomatic.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/randomatic",
   "bugs": {
     "url": "https://github.com/jonschlinkert/randomatic/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
-  },
+  "license": "MIT",
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha"
   },
   "main": "index.js",
   "files": [
@@ -33,7 +24,7 @@
     "benchmarked": "^0.1.4",
     "chalk": "^1.1.1",
     "glob": "^5.0.15",
-    "should": "^7.1.1"
+    "should": "*"
   },
   "keywords": [
     "alpha",
