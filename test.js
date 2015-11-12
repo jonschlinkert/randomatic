@@ -7,7 +7,8 @@
 
 'use strict';
 
-var should = require('should');
+require('mocha');
+require('should');
 var randomize = require('./');
 
 function test(re, str) {
