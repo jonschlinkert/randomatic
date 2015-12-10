@@ -46,6 +46,9 @@
         "pad-left",
         "pad-right"
       ]
-    }
+    },
+    "plugins": [
+      "gulp-format-md"
+    ]
   }
 }
