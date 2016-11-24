@@ -62,6 +62,10 @@
     },
     "lint": {
       "reflinks": true
-    }
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ]
   }
 }
