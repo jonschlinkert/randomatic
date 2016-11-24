@@ -13,6 +13,9 @@
     "index.js"
   ],
   "main": "index.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "scripts": {
     "test": "mocha"
   },
@@ -24,6 +27,7 @@
     "ansi-bold": "^0.1.1",
     "benchmarked": "^0.1.4",
     "glob": "^5.0.15",
+    "gulp-format-md": "^0.1.11",
     "mocha": "*",
     "should": "*"
   },
@@ -36,19 +40,28 @@
     "numeric",
     "rand",
     "random",
+    "randomatic",
     "randomize",
     "randomized"
   ],
   "verb": {
-    "related": {
-      "list": [
-        "repeat-string",
-        "pad-left",
-        "pad-right"
-      ]
-    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
     "plugins": [
       "gulp-format-md"
-    ]
+    ],
+    "related": {
+      "list": [
+        "pad-left",
+        "pad-right",
+        "repeat-string"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    }
   }
 }
