@@ -28,7 +28,7 @@ var type = {
   special: '~!@#$%^&()_+-={}[];\',.'
 };
 
-type.all = type.lower + type.upper + type.number;
+type.all = type.lower + type.upper + type.number + type.special;
 
 /**
  * Generate random character sequences of a specified `length`,
