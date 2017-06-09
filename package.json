@@ -4,6 +4,13 @@
   "version": "1.1.6",
   "homepage": "https://github.com/jonschlinkert/randomatic",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Bogdan Chadkin (https://github.com/TrySound)",
+    "Dragos Fotescu (http://dragosfotescu.com)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Paul Miller (paulmillr.com)",
+    "Sun Knudsen (http://sunknudsen.com)"
+  ],
   "repository": "jonschlinkert/randomatic",
   "bugs": {
     "url": "https://github.com/jonschlinkert/randomatic/issues"
@@ -20,16 +27,16 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-number": "^2.0.2",
-    "kind-of": "^3.0.2"
+    "is-number": "^3.0.0",
+    "kind-of": "^4.0.0"
   },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
-    "benchmarked": "^0.1.4",
-    "glob": "^5.0.15",
-    "gulp-format-md": "^0.1.11",
-    "mocha": "*",
-    "should": "*"
+    "benchmarked": "^1.1.1",
+    "glob": "^7.1.2",
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1"
   },
   "keywords": [
     "alpha",
