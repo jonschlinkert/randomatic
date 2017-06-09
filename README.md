@@ -91,7 +91,7 @@ Define a custom string to be randomized.
 * `randomize('AAA0')` and `randomize('AA00')` and `randomize('A0A0')` are equivelant to `randomize('A0', 4)`
 * `randomize('aa')`: results in double-digit, randomized, lower-case letters (`abcdefghijklmnopqrstuvwxyz`)
 * `randomize('AAA')`: results in triple-digit, randomized, upper-case letters (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`)
-* `randomize('0', 6)`: results in six-digit, randomized nubmers (`0123456789`)
+* `randomize('0', 6)`: results in six-digit, randomized numbers (`0123456789`)
 * `randomize('!', 5)`: results in single-digit randomized, _valid_ non-letter characters (`~!@#$%^&()_+-={}[];\',.`)
 * `randomize('A!a0', 9)`: results in nine-digit, randomized characters (any of the above)
 
@@ -111,7 +111,7 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 ### Contributors
 
-| **Commits** | **Contributor**<br/> | 
+| **Commits** | **Contributor**<br/> |
 | --- | --- |
 | 36 | [jonschlinkert](https://github.com/jonschlinkert) |
 | 1 | [TrySound](https://github.com/TrySound) |
