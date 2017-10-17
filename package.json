@@ -27,8 +27,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-number": "^3.0.0",
-    "kind-of": "^4.0.0"
+    "is-number": "^4.0.0",
+    "kind-of": "^6.0.0"
   },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
