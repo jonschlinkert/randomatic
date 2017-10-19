@@ -7,9 +7,11 @@
   "contributors": [
     "Bogdan Chadkin (https://github.com/TrySound)",
     "Dragos Fotescu (http://dragosfotescu.com)",
+    "Faiz ul haque (http://www.10pearls.com)",
     "Jon Schlinkert (http://twitter.com/jonschlinkert)",
     "Paul Miller (paulmillr.com)",
-    "Sun Knudsen (http://sunknudsen.com)"
+    "Rouven Weßling (www.rouvenwessling.de)",
+    "Sun Knudsen (https://sunknudsen.com)"
   ],
   "repository": "jonschlinkert/randomatic",
   "bugs": {
