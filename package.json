@@ -1,7 +1,7 @@
 {
   "name": "randomatic",
-  "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
-  "version": "1.1.7",
+  "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
+  "version": "2.0.0",
   "homepage": "https://github.com/jonschlinkert/randomatic",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -46,6 +46,9 @@
     "characters",
     "chars",
     "numeric",
+    "password",
+    "generate",
+    "generate-password",
     "rand",
     "random",
     "randomatic",
@@ -70,10 +73,6 @@
     },
     "lint": {
       "reflinks": true
-    },
-    "reflinks": [
-      "verb",
-      "verb-generate-readme"
-    ]
+    }
   }
 }
