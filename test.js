@@ -94,14 +94,6 @@ describe('randomatic', function() {
     randomize('*', 16).length.should.equal(16);
   });
 
-  it('should generate Alpha (Upper/Lower), Numeric, Special Char 16-character string', function() {
-    var actual = randomize('*');
-    test(/^(?=.*[~!@#$%^&()_+-={}[\];\',.]).*$/, actual).should.be.true;
-    test(/^(?=.*[A-Z]).*$/, actual).should.be.true;
-    test(/^(?=.*[a-z]).*$/, actual).should.be.true;
-    test(/(?=.*\d).*$/, actual).should.be.true;
-  });
-
   it('alphabetical, 10 digit:', function() {
     randomize('A', 10).length.should.equal(10);
   });
