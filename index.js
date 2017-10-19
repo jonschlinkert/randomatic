@@ -66,65 +66,17 @@ function randomatic(pattern, length, options) {
   var mask = '';
   var res = '';
 
-  var setupCounter = 0;
-  var setup = [];
   // Characters to be used
-  if (pattern.indexOf('?') !== -1) {
-    setup[setupCounter++] = {
-      chars: opts.chars
-    };
-  }
-  if (pattern.indexOf('a') !== -1) {
-    setup[setupCounter++] = {
-      chars: type.lower
-    };
-  }
-  if (pattern.indexOf('A') !== -1) {
-    setup[setupCounter++] = {
-      chars: type.upper
-    };
-  }
-  if (pattern.indexOf('0') !== -1) {
-    setup[setupCounter++] = {
-      chars: type.number
-    };
-  }
-  if (pattern.indexOf('!') !== -1) {
-    setup[setupCounter++] = {
-      chars: type.special
-    };
-  }
-  if (pattern.indexOf('*') !== -1) {
-    setup[setupCounter++] = {
-      chars: type.lower
-    };
-    setup[setupCounter++] = {
-      chars: type.upper
-    };
-    setup[setupCounter++] = {
-      chars: type.number
-    };
-    setup[setupCounter++] = {
-      chars: type.special
-    };
-  }
-  if (custom) {
-    setup[setupCounter++] = {
-      chars: pattern
-    };
-  };
+  if (pattern.indexOf('?') !== -1) mask += opts.chars;
+  if (pattern.indexOf('a') !== -1) mask += type.lower;
+  if (pattern.indexOf('A') !== -1) mask += type.upper;
+  if (pattern.indexOf('0') !== -1) mask += type.number;
+  if (pattern.indexOf('!') !== -1) mask += type.special;
+  if (pattern.indexOf('*') !== -1) mask += type.all;
+  if (custom) mask += pattern;
 
-  setupCounter = 0;
   while (length--) {
-    if(!setup[setupCounter]) {
-      setupCounter = 0;
-    }
-    var obj = setup[setupCounter++];
-    res += obj.chars.charAt(getRandomInt(0, obj.chars.length - 1));
+    res += mask.charAt(parseInt(Math.random() * mask.length, 10));
   }
   return res;
 };
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
