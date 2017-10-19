@@ -51,7 +51,9 @@ function randomatic(pattern, length, options) {
       length = pattern.length;
 
     } else if (isNumber(pattern)) {
-      options = {}; length = pattern; pattern = '*';
+      options = {};
+      length = pattern;
+      pattern = '*';
     }
   }
 
