@@ -16,6 +16,10 @@ function test(re, str) {
 }
 
 describe('randomatic', function() {
+  it('should export an isCrypto boolean property', function() {
+    assert.equal(typeof randomize.isCrypto, 'boolean');
+  });
+
   it('should throw an error when no arguments are passed:', function() {
     assert.throws(function() {
       randomize();
