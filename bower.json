@@ -1,6 +1,6 @@
 {
   "name": "randomatic",
-  "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+  "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
   "repository": "jonschlinkert/randomatic",
   "license": "MIT",
   "homepage": "https://github.com/jonschlinkert/randomatic",
@@ -12,7 +12,8 @@
   ],
   "dependencies": {
     "is-number": "^4.0.0",
-    "kind-of": "^6.0.0"
+    "kind-of": "^6.0.0",
+    "math-random": "^1.0.1"
   },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
@@ -27,14 +28,17 @@
     "alphanumeric",
     "characters",
     "chars",
+    "generate",
+    "generate-password",
     "numeric",
+    "password",
     "rand",
     "random",
     "randomatic",
     "randomize",
     "randomized"
   ],
-  "version": "1.1.7",
+  "version": "2.0.0",
   "bugs": {
     "url": "https://github.com/jonschlinkert/randomatic/issues"
   },
@@ -54,8 +58,10 @@
   "contributors": [
     "Bogdan Chadkin (https://github.com/TrySound)",
     "Dragos Fotescu (http://dragosfotescu.com)",
+    "Faiz ul haque (http://www.10pearls.com)",
     "Jon Schlinkert (http://twitter.com/jonschlinkert)",
     "Paul Miller (paulmillr.com)",
-    "Sun Knudsen (http://sunknudsen.com)"
+    "Rouven Weßling (www.rouvenwessling.de)",
+    "Sun Knudsen (https://sunknudsen.com)"
   ]
 }
