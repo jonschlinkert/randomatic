@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "is-number": "^4.0.0",
-    "kind-of": "^6.0.0"
+    "kind-of": "^6.0.0",
+    "math-random": "^1.0.1"
   },
   "devDependencies": {
     "ansi-bold": "^0.1.1",
