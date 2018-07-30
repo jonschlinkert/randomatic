@@ -92,7 +92,7 @@ describe('randomatic', function() {
   });
 
   it('should generate a random string excluding characters on the `exclude` option', function() {
-    var actual = randomize('Aa0', 16, {exclude: ['0','O','o']});
+    var actual = randomize('?', 16, {chars: 'jonschlinkert', exclude: ['0','O','o']});
     assert(test(/[^oO0]{16}/, actual));
     assert.equal(actual.length, 16);
   });
