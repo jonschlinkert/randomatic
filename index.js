@@ -80,7 +80,7 @@ function randomatic(pattern, length, options) {
   if (custom) mask += pattern;
 
   // Characters to exclude
-  if (opts.exclude) mask = mask.split('').filter(char => !opts.exclude.includes(char)).join('');
+  if (opts.exclude) mask = mask.replace(new RegExp('['+opts.exclude.join('')+']+', 'g'), '');
 
   while (length--) {
     res += mask.charAt(parseInt(mathRandom() * mask.length, 10));
