@@ -91,6 +91,12 @@ describe('randomatic', function() {
     assert.equal(actual.length, 13);
   });
 
+  it('should generate a random string excluding characters on the `exclude` option', function() {
+    var actual = randomize('Aa0', 16, {exclude: ['0','O','o']});
+    assert(test(/[^oO0]{16}/, actual));
+    assert.equal(actual.length, 16);
+  });
+
   it('should generate a radomized 16-character string', function() {
     assert.equal(randomize('*', 16).length, 16);
   });

@@ -79,6 +79,9 @@ function randomatic(pattern, length, options) {
   if (pattern.indexOf('*') !== -1) mask += type.all;
   if (custom) mask += pattern;
 
+  // Characters to exclude
+  if (opts.exclude) mask = mask.split('').filter(char => !opts.exclude.includes(char)).join('');
+
   while (length--) {
     res += mask.charAt(parseInt(mathRandom() * mask.length, 10));
   }
