@@ -80,6 +80,10 @@ function parse(args) {
   });
 }
 
+console.log();
+console.log(rand('*', 20, { exclude: '0oOiIlL1' }));
+console.log();
+
 // function parse(args) {
 //   return args.map(function(arg) {
 //     if (/\{/.test(arg)) {
