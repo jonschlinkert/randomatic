@@ -81,7 +81,7 @@ function randomatic(pattern, length, options) {
 
   // Characters to exclude
   if (opts.exclude) {
-    var exclude = typeOf(length) === 'string' ? opts.exclude : opts.exclude.join('');
+    var exclude = typeOf(opts.exclude) === 'string' ? opts.exclude : opts.exclude.join('');
     mask = mask.replace(new RegExp('[' + exclude + ']+', 'g'), '');
   }
 
