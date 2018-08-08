@@ -1,7 +1,7 @@
 {
   "name": "randomatic",
   "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "homepage": "https://github.com/jonschlinkert/randomatic",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
