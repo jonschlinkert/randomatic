@@ -103,6 +103,18 @@ describe('randomatic', function() {
     assert.equal(actual.length, 16);
   });
 
+  it('should generate a random string excluding right square bracket on the `exclude` option', function() {
+    var actual = randomize('*', 16, {exclude: ']'});
+    assert(test(/[^\]]{16}/, actual));
+    assert.equal(actual.length, 16);
+  });
+
+  it('should generate a random string excluding array with one element(right square bracket) on the `exclude` option', function() {
+    var actual = randomize('*', 16, {exclude: [']']});
+    assert(test(/[^\]]{16}/, actual));
+    assert.equal(actual.length, 16);
+  });
+
   it('should generate a radomized 16-character string', function() {
     assert.equal(randomize('*', 16).length, 16);
   });
