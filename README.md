@@ -107,7 +107,7 @@ Specify a string or array of characters can are excluded from the possible chara
 
 ## Usage Examples
 
-* `randomize('A', 4)` (_whitespace insenstive_) would result in randomized 4-digit uppercase letters, like, `ZAKH`, `UJSL`... etc.
+* `randomize('A', 4)` (_whitespace insensitive_) would result in randomized 4-digit uppercase letters, like, `ZAKH`, `UJSL`... etc.
 * `randomize('AAAA')` is equivalent to `randomize('A', 4)`
 * `randomize('AAA0')` and `randomize('AA00')` and `randomize('A0A0')` are equivalent to `randomize('A0', 4)`
 * `randomize('aa')`: results in double-digit, randomized, lower-case letters (`abcdefghijklmnopqrstuvwxyz`)
