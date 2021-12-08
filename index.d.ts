@@ -2,12 +2,12 @@
 // Project: https://github.com/jonschlinkert/randomatic
 // Definitions by: Sang Dang <https://github.com/sangdth>
 
-interface randomOptions {
+interface Options {
   chars?: string;
   exclude?: string | string[];
 }
 
-declare function randomatic(p: string, l?: number, options?: randomOptions): string;
+declare function randomatic(pattern: string, length?: number, options?: Options): string;
 
 declare namespace randomatic {
   const isCrypto: boolean;
