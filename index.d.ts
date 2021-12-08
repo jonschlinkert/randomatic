@@ -3,7 +3,7 @@
 // Definitions by: Sang Dang <https://github.com/sangdth>
 
 interface randomOptions {
-  chars: string;
+  chars?: string;
   exclude?: string | string[];
 }
 

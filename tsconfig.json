@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "declaration": true,
-    "importHelpers": true,
+    "emitDeclarationOnly": true,
     "module": "commonjs",
-    "esModuleInterop": true,
-    "outDir": "lib",
-    "rootDir": "src",
-    "strict": true,
+    "declarationMap": true,
+    "rootDir": ".",
     "target": "es2017"
   },
   "include": [
-    "src/**/*"
+    "index.js"
   ]
 }
