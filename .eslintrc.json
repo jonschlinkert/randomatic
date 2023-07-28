@@ -6,6 +6,19 @@
     "mocha": true
   },
 
+  "parserOptions":{
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+
+  "plugins": [
+    "@typescript-eslint/eslint-plugin"
+  ],
+
   "globals": {
     "document": false,
     "navigator": false,

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "module": "commonjs",
+    "declarationMap": true,
+    "rootDir": ".",
+    "target": "es2017"
+  },
+  "include": [
+    "index.js"
+  ]
+}

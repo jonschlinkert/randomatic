@@ -35,6 +35,8 @@
     "math-random": "^1.0.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
     "ansi-bold": "^0.1.1",
     "benchmarked": "^1.1.1",
     "glob": "^7.1.2",
